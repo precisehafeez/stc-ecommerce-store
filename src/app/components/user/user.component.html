@@ -1,0 +1,42 @@
+<div class="user-container">
+  <img src="assets/logos/stcLogo.webp" class="img-resp"/>
+    <mat-icon class="c-p l-icon" (click)="logout()" color="primary">logout</mat-icon>
+    <!-- Category Items -->
+    <ul>
+      <li *ngFor="let category of categories;let i = index"><a (click)="filterProductsByCategory(category)" [ngStyle]="{'color': navItemColors[i]}"> {{ category }}</a></li>
+      <li><a (click)="resetFilter()" *ngIf="categories.length > 0" [ngStyle]="{'color':  '#e46569'}">Show All</a></li>
+    </ul>
+
+    <!-- Loader -->
+    <div *ngIf="isLoading" class="loading-spinner">
+      <div class="spinner"></div>
+    </div>
+    <h2 *ngIf="displayedProducts.length > 0" class="h-productlist m-t-30">{{currentCategory}}</h2>
+    <!-- Product Cards HTML  -->
+    <div class="shell">
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-4 col-lg-4 col-md-6 col-12" *ngFor="let product of displayedProducts">
+            <div class="wsk-cp-product">
+              <div class="wsk-cp-img t-a-c">
+                <img [src]="product.image"  alt="Product" class="img-responsive m-w-250" />
+              </div>
+              <div class="wsk-cp-text">
+                <div class="category">
+                  <span>${{ product.price }}</span>
+                </div>
+                <div class="title-product">
+                  <h3>{{ product.title }}</h3>
+                </div>
+                <div class="description-prod">
+                  <p>{{ product.description }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  

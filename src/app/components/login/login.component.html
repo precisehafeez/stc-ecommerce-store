@@ -1,0 +1,15 @@
+<!-- Login Container -->
+  <div class="container_">
+    <div class="top"></div>
+    <div class="bottom"></div>
+    <div class="center" [dir]="'dir' | translate">
+      <img src="assets/logos/stcLogo.webp" width="150px"/>
+      <input type="email" placeholder='{{ "login.formfield.username.name" | translate }}' [(ngModel)]="username" required/>
+      <input type="password" placeholder='{{ "login.formfield.password.name" | translate }}' [(ngModel)]="password" required/>
+      <button mat-raised-button color="primary" class="m-t-25" (click)="onLogin()" [disabled]="!username || !password">{{'login.buttons.login' | translate }}</button>
+      <select #langSelect class="lang-dropdown" (change)="useLanguage($event)">
+        <option value="en" [selected]="true">English</option>
+        <option value="ar">Arabic</option>
+      </select>
+    </div>
+  </div>

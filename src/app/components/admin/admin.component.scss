@@ -1,0 +1,43 @@
+/* admin.component.scss */
+
+.admin-container {
+  padding: 20px;
+}
+
+.admin-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.add-product-button {
+  margin-bottom: 30px;
+}
+
+/*styles for mat-table */
+.mat-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 16px;
+}
+.img-resp{
+  position: absolute;
+  width: 80px;
+  top: 10px;
+  left: 10px;
+}
+.m-t-60{
+  margin-top: 60px;
+}
+.c-p{
+  cursor: pointer;
+}
+.f-r{
+  float: right;
+}
+.l-icon{
+  position: absolute;
+  right: 10px;
+  top: 30px;
+  cursor: pointer;
+}
